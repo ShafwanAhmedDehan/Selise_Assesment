@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bookmarks</title>
+</head>
+<body style="font-family: sans-serif; background-color: #f0f0f0; text-align: center;">
+    <h1 id="PageHeader" style="font-family: Arial, sans-serif; font-size: 28px; padding: 20px; display: inline-block">Heading Not Found</h1>
+    &ensp;     &ensp;     &ensp;
+    <button id="AddBookmark" style="font-size: 18px; margin-left: 10px;" onclick="document.location='./BookMarkAddForm.html'">Add Bookmark</button>
+    <h3 id="categoryTitle" style="text-align: left; font-weight: bold;">Cat</h3>
+    
+    <div style="text-align: left; background-color: whitesmoke; width: 25%; box-shadow: 0px 0px 10px #9A2107;">
+        &ensp;<label style="font-weight: bold;" id="BookMarkTitle">dehan</label>
+        &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp;&ensp;
+        <button onclick="viewDetails()" style="background-color: #007bff; color: #ffffff; padding: 5px 10px; border: none; border-radius: 3px; font-weight: bold;">Details</button>
+    </div>
+
+    <span>
+        <div id = "infoBox" style="margin-left: 50%; text-align: left; width: 45%; box-shadow: 0px 0px 10px skyblue; display: none;">
+            &ensp;<label style="font-weight: bold;" id="BookMarkTitleview"></label><br>
+            &ensp;<label style="font-weight: bold;" id="BookMarkURLTitle"></label>
+            &ensp;<label style="font-weight: bold;" id="BookMarkURL"><a id="BookmarkURL" href=""></a></label><br>
+            &ensp;<label style="font-weight: bold;" id="CatagoryView"></label><br>
+        </div>
+    </span>
+
+    <script>
+        const BookMarkData = localStorage.getItem('bookmark');
+        const bookmarkData = JSON.parse(BookMarkData);
+        if (bookmarkData) 
+        {
+            document.getElementById('categoryTitle').innerHTML = bookmarkData.category;
+            document.getElementById('BookMarkTitle').innerHTML = bookmarkData.title;
+        }
+
+        function viewDetails()
+        {
+            document.getElementById('infoBox').style.display = 'block';
+            document.getElementById('BookMarkTitleview').innerHTML = "Title : " + bookmarkData.title;
+            document.getElementById('BookMarkURLTitle').innerHTML = "URL : ";
+            document.getElementById('BookmarkURL').href =bookmarkData.url;
+            document.getElementById('BookmarkURL').textContent =bookmarkData.url;
+            document.getElementById('CatagoryView').innerHTML ="Category : " + bookmarkData.category;
+        }
+    </script>
+    <script src="../JavaScript/Heading.js"></script>
+</body>
+</html>

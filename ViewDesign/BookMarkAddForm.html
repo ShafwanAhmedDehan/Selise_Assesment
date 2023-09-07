@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Bookmark</title>
+</head>
+<body style="font-family: sans-serif; background-color: #f0f0f0; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div style="background-color: #ffffff; padding: 20px; border-radius: 5px; box-shadow: 0px 0px 10px #9A2107; width: 500px;">
+        <h3>Add Bookmark</h1>
+        <form name="AddCatagory" onsubmit="return handleValidation()" method="POST" style="margin-top: 20px;">
+            <div style="margin-bottom: 10px;">
+                <input type="text" id="Title" name="Title" style="width: 80%; padding: 10px; border: 1px solid whitesmoke; border-radius: 3px;" placeholder="Title">
+                <div><span style="color: #dc3545; font-weight: bold;" id="ValidationTitle"></span></div>
+            </div>
+            <br>
+            <div style="margin-bottom: 10px;">
+                <input type="text" id="URL" name="URL" style="width: 80%; padding: 10px; border: 1px solid whitesmoke; border-radius: 3px;" placeholder="Url">
+                <div><span style="color: #dc3545; font-weight: bold;" id="ValidationURL"></span></div>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <select id="Category" name="Category" style="width: 70%; padding: 10px; border: 1px solid whitesmoke; border-radius: 3px;">
+                    <option value="" disabled selected>Category</option>
+                    <option value="Category A">Category A</option>
+                    <option value="Category B">Category B</option>
+                    <option value="Category C">Category C</option>
+                </select>
+                <button type="button" onclick="VisiableNewCat()" style="padding: 5px; width: 5%; font-weight: bold;">+</button>
+            </div>
+            <span>
+                <div id="NewCatdiv" style="margin-bottom: 10px; display: none;">
+                    <input type="text" id="NewCat" name="NewCat" style="width: 80%; padding: 10px; border: 1px solid whitesmoke; border-radius: 3px;" placeholder="New Category">
+                </div>
+            </span>
+            <div><span style="color: #dc3545; font-weight: bold;" id="ValidationCatagory"></span></div>
+            <div style="text-align: center;">
+                <button onclick="document.location ='./BookmarkManager.html'" type="button" style="background-color: #dc3545; color: #ffffff; padding: 10px 20px; border: none; border-radius: 3px; font-weight: bold;">Cancel</button>
+                &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;
+                <button type="submit" style="background-color: #007bff; color: #ffffff; padding: 10px 20px; border: none; border-radius: 3px; font-weight: bold;">Save</button>
+            </div>
+        </form>
+    </div>
+    <script src="../JavaScript/NewCatInutShow.js" ></script>
+    <script src="../JavaScript/Validation.js" ></script>
+    <script src="../JavaScript/BookmarkSave.js"></script>
+</body>
+</html>
